@@ -1,0 +1,21 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft-sv
+    restart: always
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./data:/data
+      - ./mods:/mods:ro
+    environment:
+      EULA: "TRUE"
+      TYPE: NEOFORGE
+      VERSION: "26.1.2"
+      NEOFORGE_VERSION: "26.1.2.100"
+      MEMORY: "16G"
+      DIFFICULTY: normal
+      MAX_PLAYERS: "10"
+      MOTD: "Servidor SV"
+      ONLINE_MODE: "TRUE"
+      MAX_TICK_TIME: "-1"
